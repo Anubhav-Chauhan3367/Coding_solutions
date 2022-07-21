@@ -10,12 +10,7 @@ class Solution {
         for(int i=0; i<nums.length; i++){
             ans += arr[i];
         }
-        int k=0; 
-        while(k<ans.length() && ans.charAt(k) == '0'){
-            k++;
-        }
-        if(k == ans.length()) return "0";
-        ans = ans.substring(k, ans.length());
+        if(ans.charAt(0) == '0') return "0";
         
         return ans;
     }
