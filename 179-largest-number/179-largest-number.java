@@ -3,16 +3,17 @@ class Solution {
         
         String arr[] = new String[nums.length];
         for(int i=0; i<nums.length; i++){
-            arr[i] = ""+nums[i];
+            arr[i] = String.valueOf(nums[i]);
         }
         Arrays.sort(arr, new MyComp());
-        String ans = "";
+        StringBuilder ans = new StringBuilder();
         for(int i=0; i<nums.length; i++){
-            ans += arr[i];
+            ans.append(arr[i]);
         }
-        if(ans.charAt(0) == '0') return "0";
         
-        return ans;
+        if(ans.toString().charAt(0) == '0') return "0";
+        
+        return ans.toString();
     }
 }
 
