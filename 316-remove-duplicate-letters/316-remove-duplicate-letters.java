@@ -2,7 +2,6 @@ class Solution {
     public String removeDuplicateLetters(String s) {
         
         boolean charA[] = new boolean[26];
-        Arrays.fill(charA, false);
         int li[] = new int[26];
         char a[] = s.toCharArray();
         for(int i=0; i<a.length; i++){
