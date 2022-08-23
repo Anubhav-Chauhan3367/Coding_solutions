@@ -16,7 +16,7 @@ class Solution {
         
         if(index == word.length()) return true;
         
-        if(i<0 || i>=board.length || j<0 || j>=board[0].length || board[i][j] == '#') return false;
+        if(i<0 || i>=board.length || j<0 || j>=board[0].length || board[i][j] == '#' || board[i][j] != word.charAt(index)) return false;
         
         boolean res = false;
         
