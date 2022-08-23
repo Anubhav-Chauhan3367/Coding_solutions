@@ -3,9 +3,7 @@ class Solution {
         
         for(int i=0; i<board.length; i++){
             for(int j=0; j<board[0].length; j++){
-                if(word.charAt(0) == board[i][j]){
-                    if(wordSearch(board, word, i, j, 0)) return true;
-                }
+                if(wordSearch(board, word, i, j, 0)) return true;
             }
         }
                 
@@ -16,7 +14,7 @@ class Solution {
         
         if(index == word.length()) return true;
         
-        if(i<0 || i>=board.length || j<0 || j>=board[0].length || board[i][j] == '#' || board[i][j] != word.charAt(index)) return false;
+        if(i<0 || i>=board.length || j<0 || j>=board[0].length || board[i][j] == '#') return false;
         
         boolean res = false;
         
