@@ -20,7 +20,7 @@ class Solution {
             ans.add(curr.substring(0, curr.length()-1));
             return;
         }
-        if(dots > 4){
+        if(dots > 4 || (dots<4 && indx == s.length())){
             return;
         }
         
