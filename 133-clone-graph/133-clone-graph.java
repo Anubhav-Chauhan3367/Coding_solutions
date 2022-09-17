@@ -20,31 +20,23 @@ class Node {
 
 class Solution {
     public Node cloneGraph(Node node) {
-        if(node == null) return null;
-        Node ans = new Node(node.val);    
-        Node[] visited = new Node[101];
-        Arrays.fill(visited, null);
-        Dfs(node, ans, visited);
-        return ans;
-        
+        HashMap<Node, Node> visited = new HashMap<>();
+        return dfs(node, visited);
     }
     
-    public void Dfs(Node node, Node ans, Node[] visited){
+    public Node dfs(Node node, HashMap<Node, Node> visited){
+        if(node == null) return null;
         
-        visited[ans.val] = ans;
+        Node graphNode = new Node(node.val);
+        visited.put(node, graphNode);
         
         for(Node a: node.neighbors){
             
-            if(visited[a.val] == null){
-                Node newNode = new Node(a.val);
-                ans.neighbors.add(newNode);
-                Dfs(a, newNode, visited);
-            }
-            else{
-                ans.neighbors.add(visited[a.val]);
-            }
+            Node curr = visited.containsKey(a)?visited.get(a):dfs(a, visited);
+            graphNode.neighbors.add(curr);
             
         }
+        return graphNode;
         
     }
 }
